@@ -15,6 +15,10 @@ public:
         this->x = x;
        // this->y = y;
     }
+    int getX()
+    {
+        return this->x;
+    }
     c_Per operator/(c_Per other)
     {
         return c_Per(this->x / other.x);
@@ -22,6 +26,15 @@ public:
     c_Per operator*(c_Per other)
     {
         return c_Per(this->x * other.x);
+    }
+    bool operator==(c_Per other)
+    {
+        return ((this->getX() == other.getX()));
+        //return!(*this == other);
+    }
+    bool operator!=(c_Per other)
+    {
+        return !(*this == other);
     }
     void print()
     {
@@ -32,9 +45,9 @@ int main()
 {
     c_Per a(20);
     c_Per b(5);
-    c_Per res = (a * b);
-    
-    res.print();
+    bool res = (a != b);
+    cout << res;
+   // res.print();
 }
 
 
