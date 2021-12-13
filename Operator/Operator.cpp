@@ -36,6 +36,14 @@ public:
     {
         return !(*this == other);
     }
+    bool operator>(c_Per other)
+    {
+        return ((this->getX() > other.getX()));
+    }
+    bool operator<(c_Per other)
+    {
+        return !(*this > other);
+    }
     void print()
     {
         cout << this->x;
@@ -45,7 +53,7 @@ int main()
 {
     c_Per a(20);
     c_Per b(5);
-    bool res = (a != b);
+    bool res = (a < b);
     cout << res;
    // res.print();
 }
