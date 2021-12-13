@@ -19,6 +19,10 @@ public:
     {
         return c_Per(this->x / other.x);
     }
+    c_Per operator*(c_Per other)
+    {
+        return c_Per(this->x * other.x);
+    }
     void print()
     {
         cout << this->x;
@@ -28,7 +32,7 @@ int main()
 {
     c_Per a(20);
     c_Per b(5);
-    c_Per res = (a / b);
+    c_Per res = (a * b);
     
     res.print();
 }
